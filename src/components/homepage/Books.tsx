@@ -4,11 +4,12 @@ import { IBook } from "@/types/books.type";
 
 const getBooks = async () => {
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,
-    );
-    const data = await response.json();
-    return data;
+    // const response = await fetch(
+    //   `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,
+    // );
+    // const data = await response.json();
+    // return data;
+    return [];
   } catch (error) {
     console.error("Error fetching books data:", error);
     return [];

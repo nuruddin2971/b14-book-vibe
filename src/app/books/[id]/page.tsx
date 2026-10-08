@@ -12,11 +12,12 @@ interface IBookDetailsPageProps {
 
 const getBooks = async () => {
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,
-    );
-    const data = await response.json();
-    return data;
+    // const response = await fetch(
+    //   `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,
+    // );
+    // const data = await response.json();
+    // return data;
+    return [];
   } catch (error) {
     console.error("Error fetching books data:", error);
     return [];
@@ -27,8 +28,8 @@ const BookDetailsPage = async ({ params }: IBookDetailsPageProps) => {
   const { id } = await params;
   const booksData = await getBooks();
   const book = booksData.find(
-    (book: IBook) => String(book.bookId) === String(id),
-  ) as IBook;
+    (book: IBook) => String(book.bookId) === String(id)
+  ) as unknown as IBook;
 
   console.log(book, "book");
 
